@@ -56,6 +56,12 @@ Returns the compiled GraphQL schema.
 
 Function that should be passed to `Mongease.plugin`, enables auto creation of types, parsing of resolvers, and creation of schemas.
 
+## Related
+
+- [mongoose-to-graphql](https://github.com/fabiospampinato/mongoose-to-graphql) - Converts a Mongoose schema to its GraphQL representation.
+- [mongease](https://github.com/fabiospampinato/mongease) - Tiny wrapper around Mongoose for easier creation of schemas and models. Supports plugins.
+- [mongease-graphql-builder](https://github.com/fabiospampinato/mongease-graphql-builder) - Module for auto-generating simple GraphQL queries from Mongease descriptions.
+
 ## License
 
 MIT © Fabio Spampinato
