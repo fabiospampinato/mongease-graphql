@@ -16,7 +16,7 @@
     "coverage": "nyc --reporter=html ava",
     "report": "nyc report",
     "report:html": "open coverage/index.html",
-    "_prepublish": "npm run clean && npm run lint && npm run compile && npm run coverage"
+    "prepublish": "npm run clean && npm run lint && npm run compile"
   },
   "ava": {
     "files": ["test/index.js"]
