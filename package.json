@@ -1,6 +1,6 @@
 {
   "name": "mongease-graphql",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Mongease plugin for adding support to GraphQL schemas creation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
