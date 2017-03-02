@@ -95,7 +95,7 @@ const GraphQL = {
           const data = resolvers[namespace][endpoint],
                 args = _.reduce ( data.args, ( acc, type, name ) => acc.concat ([ `${name}: ${type}` ]), [] as string[] );
 
-          GraphQL._parsed.types[namespace].push ( `${endpoint} ` + ( args.length ? `( ${args.join ( ', ' )} )` : '()' ) + `: ${data.type || name}` );
+          GraphQL._parsed.types[namespace].push ( `${endpoint} ` + ( args.length ? `( ${args.join ( ', ' )} )` : '' ) + `: ${data.type || name}` );
           GraphQL._parsed.resolvers[namespace][endpoint] = data.resolve;
 
         }
