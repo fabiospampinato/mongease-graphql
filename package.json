@@ -1,6 +1,6 @@
 {
   "name": "mongease-graphql",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mongease plugin for adding support to GraphQL schemas creation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,8 +8,8 @@
     "clean:dist": "rimraf dist",
     "clean:coverage": "rimraf coverage .nyc_output",
     "clean": "npm run clean:dist && npm run clean:coverage",
-    "precompile": "npm run clean:dist",
     "compile": "tsc --skipLibCheck",
+    "compile:watch": "tsc --skipLibCheck --watch",
     "lint": "tslint \"src/**/*.ts*\" --force",
     "test": "ava",
     "test:watch": "ava --watch",
@@ -19,7 +19,9 @@
     "prepublish": "npm run clean && npm run lint && npm run compile"
   },
   "ava": {
-    "files": ["test/index.js"]
+    "files": [
+      "test/index.js"
+    ]
   },
   "bugs": {
     "url": "https://github.com/fabiospampinato/mongease-graphql/issues"
@@ -41,8 +43,11 @@
   ],
   "dependencies": {
     "@types/lodash": "^4.14.54",
+    "graphql": "^0.9.1",
+    "graphql-tools": "^0.10.1",
     "lodash": "^4.17.4",
     "mongoose-to-graphql": "^1.0.2",
+    "tslint": "^4.5.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
