@@ -85,18 +85,21 @@ const GraphQL = {
 
     resolvers ( name: string, resolvers ) {
 
+      const parsedTypes = GraphQL._parsed.types,
+            parsedResolvers = GraphQL._parsed.resolvers;
+
       for ( let namespace in resolvers ) {
 
-        GraphQL._parsed.types[namespace] = [];
-        GraphQL._parsed.resolvers[namespace] = {};
+        if ( !parsedTypes[namespace] ) parsedTypes[namespace] = [];
+        if ( !parsedResolvers[namespace] ) parsedResolvers[namespace] = {};
 
         for ( let endpoint in resolvers[namespace] ) {
 
           const data = resolvers[namespace][endpoint],
                 args = _.reduce ( data.args, ( acc, type, name ) => acc.concat ([ `${name}: ${type}` ]), [] as string[] );
 
-          GraphQL._parsed.types[namespace].push ( `${endpoint} ` + ( args.length ? `( ${args.join ( ', ' )} )` : '' ) + `: ${data.type || name}` );
-          GraphQL._parsed.resolvers[namespace][endpoint] = data.resolve;
+          parsedTypes[namespace].push ( `${endpoint} ` + ( args.length ? `( ${args.join ( ', ' )} )` : '' ) + `: ${data.type || name}` );
+          parsedResolvers[namespace][endpoint] = _.isFunction ( data ) ? { resolve: data } : data.resolve;
 
         }
 
