@@ -10,13 +10,12 @@
     "clean": "npm run clean:dist && npm run clean:coverage",
     "compile": "tsc --skipLibCheck",
     "compile:watch": "tsc --skipLibCheck --watch",
-    "lint": "tslint \"src/**/*.ts*\" --force",
     "test": "ava",
     "test:watch": "ava --watch",
     "coverage": "nyc --reporter=html ava",
     "report": "nyc report",
     "report:html": "open coverage/index.html",
-    "prepublish": "npm run clean && npm run lint && npm run compile"
+    "prepublish": "npm run clean && npm run compile"
   },
   "ava": {
     "files": [
@@ -46,15 +45,13 @@
     "graphql": "^0.9.1",
     "graphql-tools": "^0.10.1",
     "lodash": "^4.17.4",
-    "mongoose-to-graphql": "^1.0.2",
-    "tslint": "^4.5.1"
+    "mongoose-to-graphql": "^1.0.2"
   },
   "devDependencies": {
     "ava": "^0.18.2",
     "ava-spec": "^1.1.0",
     "nyc": "^10.1.2",
     "rimraf": "^2.6.0",
-    "tslint": "^4.4.2",
     "typescript": "~2.2.0"
   }
 }
