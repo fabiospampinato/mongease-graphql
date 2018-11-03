@@ -1,8 +1,5 @@
 # Mongease GraphQL
 
-![Issues](https://img.shields.io/github/issues/fabiospampinato/mongease-graphql.svg)
-[![NPM version](https://img.shields.io/npm/v/mongease-graphql.svg)](https://www.npmjs.com/package/mongease-graphql)
-
 Mongease plugin for adding support to GraphQL schemas creation.
 
 ## Install
