@@ -1,7 +1,8 @@
 
 /* IMPORT */
 
-import * as _ from 'lodash';
+import isFunction = require ( 'lodash/isFunction' );
+import reduce = require ( 'lodash/reduce' );
 import {GraphQLSchema} from 'graphql';
 import {makeExecutableSchema} from 'graphql-tools';
 import M2G from 'mongoose-to-graphql';
@@ -96,10 +97,10 @@ const GraphQL = {
         for ( let endpoint in resolvers[namespace] ) {
 
           const data = resolvers[namespace][endpoint],
-                args = _.reduce ( data.args, ( acc, type, name ) => acc.concat ([ `${name}: ${type}` ]), [] as string[] );
+                args = reduce ( data.args, ( acc, type, name ) => acc.concat ([ `${name}: ${type}` ]), [] as string[] );
 
           parsedTypes[namespace].push ( `${endpoint} ` + ( args.length ? `( ${args.join ( ', ' )} )` : '' ) + `: ${data.type || name}` );
-          parsedResolvers[namespace][endpoint] = _.isFunction ( data ) ? { resolve: data } : data.resolve;
+          parsedResolvers[namespace][endpoint] = isFunction ( data ) ? { resolve: data } : data.resolve;
 
         }
 
