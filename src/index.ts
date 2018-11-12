@@ -124,4 +124,4 @@ const GraphQL = {
 
 /* EXPORT */
 
-export = Object.assign ( GraphQL, { default: GraphQL } );
+export default GraphQL;
