@@ -5,22 +5,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "clean:dist": "rimraf dist",
-    "clean:coverage": "rimraf coverage .nyc_output",
-    "clean": "npm run clean:dist && npm run clean:coverage",
+    "clean": "rimraf dist",
     "compile": "tsc --skipLibCheck && tstei",
     "compile:watch": "tsc --skipLibCheck --watch",
-    "test": "ava",
-    "test:watch": "ava --watch",
-    "coverage": "nyc --reporter=html ava",
-    "report": "nyc report",
-    "report:html": "open coverage/index.html",
     "prepublishOnly": "npm run clean && npm run compile"
-  },
-  "ava": {
-    "files": [
-      "test/index.js"
-    ]
   },
   "bugs": {
     "url": "https://github.com/fabiospampinato/mongease-graphql/issues"
@@ -48,9 +36,6 @@
     "mongoose-to-graphql": "^1.0.9"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
-    "ava-spec": "^1.1.0",
-    "nyc": "^10.1.2",
     "rimraf": "^2.6.0",
     "typescript": "~3.0.3",
     "typescript-transform-export-interop": "^1.0.1"
